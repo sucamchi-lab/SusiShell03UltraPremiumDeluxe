@@ -1,0 +1,454 @@
+================================================================================
+1. py_bracket_validator.py
+================================================================================
+
+Assignment:
+Write a function that checks if the brackets in a string are valid.
+
+A string is valid if every opening bracket has a matching closing bracket
+in the correct order.
+
+Allowed brackets: (), [], {}
+
+Function signature:
+def bracket_validator(s: str) -> bool:
+
+Examples:
+Input:  bracket_validator("()")
+Output: True
+
+Input:  bracket_validator("()[]{}")
+Output: True
+
+Input:  bracket_validator("(]")
+Output: False
+
+Input:  bracket_validator("([)]")
+Output: False
+
+Input:  bracket_validator("{[]}")
+Output: True
+
+Input:  bracket_validator("hello(world)")
+Output: True
+
+Input:  bracket_validator("((())")
+Output: False
+
+Input:  bracket_validator("")
+Output: True
+
+================================================================================
+2. py_cryptic_sorter.py
+================================================================================
+
+Assignment:
+Write a function that sorts a list of strings according to multiple criteria:
+1. Primary sort: By string length (shortest first)
+2. Secondary sort: ASCII order, except letters are compared case-insensitively
+   (for strings of same length)
+3. Tertiary sort: By number of vowels (ascending, for same length and lexically equal)
+4. Equal strings will appear in the same order as in the input list.
+
+Forbidden functions: sorted(), list.sort()
+
+Function signature:
+def cryptic_sorter(strings: list[str]) -> list[str]:
+
+Examples:
+Input:  cryptic_sorter(["apple","cat","banana","dog","elephant"])
+Output: ["cat","dog","apple","banana","elephant"]
+
+Input:  cryptic_sorter(["aaa","bbb","AAA","BBB"])
+Output: ["aaa", "AAA", "bbb", "BBB"]
+
+Input:  cryptic_sorter(["hello","world","hi","test"])
+Output: ["hi","test","hello","world"]
+
+Input:  cryptic_sorter([])
+Output: []
+
+Input:  cryptic_sorter([""])
+Output: [""]
+
+================================================================================
+3. py_echo_validator.py
+================================================================================
+
+Assignment:
+Write a function that checks if a string is a palindrome,
+ignoring spaces and case, only consider alphabetic characters
+for the comparison.
+
+Function signature:
+def echo_validator(text: str) -> bool:
+
+Examples:
+Input:  echo_validator("racecar")
+Output: True
+
+Input:  echo_validator("A man a plan a canal Panama")
+Output: True
+
+Input:  echo_validator("race a car")
+Output: False
+
+Input:  echo_validator("Was it a car or a cat I saw")
+Output: True
+
+Input:  echo_validator("hello")
+Output: False
+
+Input:  echo_validator("Madam Im Adam")
+Output: True
+
+Input:  echo_validator("")
+Output: False
+
+================================================================================
+4. py_mirror_matrix.py
+================================================================================
+
+Assignment:
+Given a 2D matrix (list of lists), return a new matrix where each row
+is reversed.
+
+Function signature:
+def mirror_matrix(matrix: list[list[int]]) -> list[list[int]]:
+
+Examples:
+Input:  mirror_matrix([[1,2,3],[4,5,6]])
+Output: [[3,2,1],[6,5,4]]
+
+Input:  mirror_matrix([[1,2],[3,4],[5,6]])
+Output: [[2,1],[4,3],[6,5]]
+
+Input:  mirror_matrix([[7]])
+Output: [[7]]
+
+Input:  mirror_matrix([[1,2,3,4]])
+Output: [[4,3,2,1]]
+
+Input:  mirror_matrix([[-1,-2],[-3,-4]])
+Output: [[-2,-1],[-4,-3]]
+
+================================================================================
+5. py_hidenp.py
+================================================================================
+
+Assignment:
+Write a function that checks if the string 'small' is a subsequence
+of 'big'. A subsequence means all characters of 'small' appear in 'big'
+in the same order, but not necessarily consecutively.
+Function is case-sensitive.
+
+Function signature:
+def hidenp(small: str, big: str) -> bool:
+
+Examples:
+Input:  hidenp("abc", "a1b2c3")
+Output: True
+
+Input:  hidenp("ace", "abcde")
+Output: True
+
+Input:  hidenp("aec", "abcde")
+Output: False
+
+Input:  hidenp("", "abc")
+Output: True
+
+Input:  hidenp("abc", "ab")
+Output: False
+
+Input:  hidenp("aaaa", "aaa")
+Output: False
+
+Input:  hidenp("sing","subsequence testing")
+Output: True
+
+================================================================================
+6. py_inter.py
+================================================================================
+
+Assignment:
+Write a function that returns a string with the characters that appear
+in both strings, without repetitions. Characters are added in the order
+they appear in the first string.
+
+Function signature:
+def inter(s1: str, s2: str) -> str:
+
+Examples:
+Input:  inter("hello", "world")
+Output: "lo"
+
+Input:  inter("banana", "band")
+Output: "ban"
+
+Input:  inter("abcabc", "bc")
+Output: "bc"
+
+Input:  inter("abc", "xyz")
+Output: ""
+
+Input:  inter("", "abc")
+Output: ""
+
+================================================================================
+7. py_number_base_converter.py
+================================================================================
+
+Assignment:
+Write a function that converts a number from one base to another.
+Support bases from 2 to 36 inclusive.
+Use digits 0-9 and letters A-Z for values 10-35.
+Return "ERROR" for invalid inputs.
+
+Function signature:
+def number_base_converter(number: str, from_base: int, to_base: int) -> str:
+
+Examples:
+Input:  number_base_converter("1010", 2, 10)
+Output: "10"
+
+Input:  number_base_converter("FF", 16, 10)
+Output: "255"
+
+Input:  number_base_converter("255", 10, 16)
+Output: "FF"
+
+Input:  number_base_converter("123", 10, 2)
+Output: "1111011"
+
+Input:  number_base_converter("Z", 36, 10)
+Output: "35"
+
+Input:  number_base_converter("35", 10, 36)
+Output: "Z"
+
+Input:  number_base_converter("123", 1, 10)
+Output: "ERROR"
+
+Input:  number_base_converter("G", 16, 10)
+Output: "ERROR"
+
+================================================================================
+8. py_pattern_tracker.py
+================================================================================
+
+Assignment:
+Write a function that counts the number of valid consecutive digit pairs
+in a string. A valid pair consists of two adjacent digits where the second
+digit is exactly one greater than the first.
+A 9 followed by a 0 is NOT a valid pair.
+
+Function signature:
+def pattern_tracker(text: str) -> int:
+
+Examples:
+Input:  pattern_tracker("123")
+Output: 2
+
+Input:  pattern_tracker("12a34")
+Output: 2
+
+Input:  pattern_tracker("987654321")
+Output: 0
+
+Input:  pattern_tracker("01234567")
+Output: 7
+
+Input:  pattern_tracker("abc")
+Output: 0
+
+Input:  pattern_tracker("1a2b3c4")
+Output: 0
+
+Input:  pattern_tracker("112233")
+Output: 2
+
+================================================================================
+9. py_anagram.py
+================================================================================
+
+Assignment:
+Write a function that checks if two strings are anagrams.
+They must contain exactly the same letters with the same quantity,
+ignoring case and spaces.
+
+Function signature:
+def anagram(s1: str, s2: str) -> bool:
+
+Examples:
+Input:  anagram("listen", "silent")
+Output: True
+
+Input:  anagram("Triangle", "Integral")
+Output: True
+
+Input:  anagram("Dormitory", "Dirty Room")
+Output: True
+
+Input:  anagram("hello", "world")
+Output: False
+
+Input:  anagram("", "")
+Output: True
+
+Input:  anagram("abc", "abcc")
+Output: False
+
+================================================================================
+10. py_shadow_merge.py
+================================================================================
+
+Assignment:
+Write a function that merges two sorted lists into one sorted list.
+
+Function signature:
+def shadow_merge(list1: list[int], list2: list[int]) -> list[int]:
+
+Examples:
+Input:  shadow_merge([1,3,5], [2,4,6])
+Output: [1,2,3,4,5,6]
+
+Input:  shadow_merge([1,2,3], [4,5,6])
+Output: [1,2,3,4,5,6]
+
+Input:  shadow_merge([1], [2,3,4])
+Output: [1,2,3,4]
+
+Input:  shadow_merge([], [1,2,3])
+Output: [1,2,3]
+
+Input:  shadow_merge([1,1,2], [1,3,3])
+Output: [1,1,1,2,3,3]
+
+================================================================================
+11. py_string_permutation_checker.py
+================================================================================
+
+Assignment:
+Write a function that determines if two strings are permutations of each other.
+Case sensitive. Whitespace and punctuation count as regular characters.
+Empty strings are permutations of each other.
+
+Function signature:
+def string_permutation_checker(s1: str, s2: str) -> bool:
+
+Examples:
+Input:  string_permutation_checker("abc", "bca")
+Output: True
+
+Input:  string_permutation_checker("abc", "def")
+Output: False
+
+Input:  string_permutation_checker("listen", "silent")
+Output: True
+
+Input:  string_permutation_checker("hello", "bello")
+Output: False
+
+Input:  string_permutation_checker("", "")
+Output: True
+
+Input:  string_permutation_checker("a", "")
+Output: False
+
+Input:  string_permutation_checker("Abc", "abc")
+Output: False
+
+Input:  string_permutation_checker("a gentleman","elegant man")
+Output: True
+
+================================================================================
+12. py_string_sculptor.py
+================================================================================
+
+Assignment:
+Write a function that transforms a string by alternating the case of
+alphabetic characters only.
+Non-alphabetic characters remain unchanged and are NOT counted in the
+alternation index.
+The first alphabetic character should be lowercase, the second uppercase, etc.
+Spaces reset the alternation (next alpha after a space is lowercase again).
+
+Function signature:
+def string_sculptor(text: str) -> str:
+
+Examples:
+Input:  string_sculptor("hello")
+Output: "hElLo"
+
+Input:  string_sculptor("Hello World")
+Output: "hElLo wOrLd"
+
+Input:  string_sculptor("abc123def")
+Output: "aBc123DeF"
+
+Input:  string_sculptor("Python3.9!")
+Output: "pYtHoN3.9!"
+
+Input:  string_sculptor("")
+Output: ""
+
+================================================================================
+13. py_twist_sequence.py
+================================================================================
+
+Assignment:
+Write a function that rotates an array to the right by k positions.
+Rotating right by k means the last k elements move to the front.
+
+Function signature:
+def twist_sequence(arr: list[int], k: int) -> list[int]:
+
+Examples:
+Input:  twist_sequence([1,2,3,4,5], 2)
+Output: [4,5,1,2,3]
+
+Input:  twist_sequence([1,2,3], 1)
+Output: [3,1,2]
+
+Input:  twist_sequence([1,2,3,4], 0)
+Output: [1,2,3,4]
+
+Input:  twist_sequence([1,2,3], 5)
+Output: [2,3,1]
+
+Input:  twist_sequence([], 3)
+Output: []
+
+================================================================================
+14. py_whisper_cipher.py
+================================================================================
+
+Assignment:
+Write a function that creates a Caesar cipher by shifting letters in a
+string by a given amount.
+Non-alphabetic characters should remain unchanged.
+The shift can be negative (shift left).
+
+Function signature:
+def whisper_cipher(text: str, shift: int) -> str:
+
+Examples:
+Input:  whisper_cipher("hello", 3)
+Output: "khoor"
+
+Input:  whisper_cipher("Hello World!", 1)
+Output: "Ifmmp Xpsme!"
+
+Input:  whisper_cipher("xyz", 3)
+Output: "abc"
+
+Input:  whisper_cipher("ABC123def", 5)
+Output: "FGH123ijk"
+
+Input:  whisper_cipher("", 10)
+Output: ""
+
+Input:  whisper_cipher("abc", -3)
+Output: "xyz"
+
