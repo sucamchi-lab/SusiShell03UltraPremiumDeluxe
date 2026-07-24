@@ -16,7 +16,7 @@ bash exam.sh
 
 ## 😩​ Resources
 
-All questions were sourced from https://rank03.42exam.net/
-AI was used to generate the testing script.
+- All questions were sourced from https://rank03.42exam.net/
+- AI was used to generate the testing script.
 
 ## six seven six seven
