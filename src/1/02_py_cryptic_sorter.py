@@ -45,6 +45,17 @@ if __name__ == "__main__":
          ["hi", "test", "hello", "world"]),
         ([], []),
         ([""], [""]),
+        # Edge cases: same-length strings requiring secondary
+        # (case-insensitive ASCII) and tertiary (vowel count) sorts
+        (["train", "brain"],
+         ["brain", "train"]),
+        (["ZZZ", "aaa"],
+         ["aaa", "ZZZ"]),
+        (["grape", "apple"],
+         ["apple", "grape"]),
+        # Tertiary sort tiebreaker: lexically equal, different vowels
+        (["ab", "AB", "ae", "AE"],
+         ["ab", "AB", "ae", "AE"]),
     ]
 
     for value, expected in tests:

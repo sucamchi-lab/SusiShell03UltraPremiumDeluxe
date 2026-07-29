@@ -32,7 +32,7 @@ get_question_text() {
             if (found) { started_content=1; next }
             next
         }
-        $0 ~ "^" n "\\. " { found=1; print; next }
+        $0 ~ "^" n "\\. .*\\.py" { found=1; print; next }
         found { print }
     ' "$QUESTIONS_FILE"
 }
