@@ -8,6 +8,16 @@ QUESTIONS_FILE="${SRC_DIR}/questions.txt"
 WORK_DIR="${SCRIPT_DIR}/work"
 RUNNER="${SCRIPT_DIR}/.exam/test_runner.py"
 
+# Ensure the work directory is emptied when this script exits
+cleanup_workdir() {
+    if [[ -d "${WORK_DIR}" ]]; then
+        rm -rf "${WORK_DIR:?}"/* || true
+    fi
+}
+
+# Run cleanup on normal exit and on common terminating signals
+trap 'cleanup_workdir' EXIT INT TERM HUP
+
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
