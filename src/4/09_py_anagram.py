@@ -5,15 +5,11 @@ Check if two strings are anagrams of each other: same letters with the
 same multiplicities, ignoring case and spaces.
 """
 
-from collections import Counter
-
-
-def _normalize(s: str) -> Counter:
-    return Counter(char.lower() for char in s if char != " ")
-
 
 def anagram(s1: str, s2: str) -> bool:
-    return _normalize(s1) == _normalize(s2)
+    def norm(s: str) -> str:
+        return "".join(ch.lower() for ch in s if ch != " ")
+    return sorted(norm(s1)) == sorted(norm(s2))
 
 
 if __name__ == "__main__":

@@ -7,16 +7,17 @@ non-alphabetic character unchanged. The shift may be negative.
 """
 
 
-def _shift_char(char: str, shift: int) -> str:
-    base = ord('a') if char.islower() else ord('A')
-    return chr((ord(char) - base + shift) % 26 + base)
+def shift_char(c: str, shift: int) -> str:
+    o = ord(c)
+    if 'a' <= c <= 'z':
+        return chr((o - 97 + shift) % 26 + 97)
+    if 'A' <= c <= 'Z':
+        return chr((o - 65 + shift) % 26 + 65)
+    return c
 
 
 def whisper_cipher(text: str, shift: int) -> str:
-    return "".join(
-        _shift_char(char, shift) if char.isalpha() else char
-        for char in text
-    )
+    return "".join(shift_char(c, shift) for c in text)
 
 
 if __name__ == "__main__":
