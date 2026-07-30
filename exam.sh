@@ -103,19 +103,7 @@ main() {
         echo
 
         local work_file="${WORK_DIR}/${picked}"
-        local func_name="${picked#*_py_}"
-        func_name="${func_name%.py}"
-
-        cat > "$work_file" <<STUBEOF
-"""${picked} — your solution.
-
-Implement: ${func_name}
-"""
-
-def ${func_name}():
-    # TODO: implement this function
-    pass
-STUBEOF
+        : > "$work_file"
 
         echo -e "📝 Write your code in: ${BOLD}${work_file}${NC}"
         echo
