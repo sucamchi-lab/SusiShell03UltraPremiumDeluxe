@@ -34,16 +34,16 @@ def number_base_converter(number: str, from_base: int, to_base: int) -> str:
     return "".join(reversed(digits))
 
 
-"""def number_base_converter(number: str, from_base: int, to_base: int) -> str:
+def number_base_converter2(number: str, from_base: int, to_base: int) -> str:
 
     if (from_base < 2 or from_base > 36) or (to_base < 2 or to_base > 36):
         return "ERROR"
     try:
         base10: int = int(number, from_base)
-    except Exception as e:
+    except Exception:
         return "ERROR"
     if base10 == 0:
-    return "0"
+        return "0"
     digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     result = []
 
@@ -51,7 +51,7 @@ def number_base_converter(number: str, from_base: int, to_base: int) -> str:
         resto = base10 % to_base
         result.append(digits[resto])
         base10 = base10 // to_base
-    return "".join(reversed(result))"""
+    return "".join(reversed(result))
 
 
 if __name__ == "__main__":
